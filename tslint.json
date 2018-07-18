@@ -1,0 +1,3 @@
+{
+  "extends": ["@cotto/tslint-config"]
+}

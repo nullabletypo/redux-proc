@@ -1,0 +1,56 @@
+{
+  "name": "redux-proc",
+  "description": "redux-proc",
+  "version": "0.0.1",
+  "author": "nullabletypo",
+  "files": [
+    "es",
+    "dist",
+    "README.md",
+    "LICENCE"
+  ],
+  "main": "dist/index.js",
+  "jsnext:main": "es/index.js",
+  "module": "es/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nullabletypo/redux-proc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nullabletypo/redux-proc/issues"
+  },
+  "homepage": "https://github.com/nullabletypo/redux-proc",
+  "dependencies": {
+    "command-bus": "https://github.com/nullabletypo/command-bus",
+    "redux": "^4.0.0",
+    "rxjs": "^6.2.2"
+  },
+  "devDependencies": {
+    "@cotto/tslint-config": "^0.1.4",
+    "@types/jest": "^23.1.6",
+    "@types/sinon": "^5.0.1",
+    "jest": "^23.4.1",
+    "npm-run-all": "^4.1.3",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^23.0.0",
+    "ts-node": "^7.0.0",
+    "tsconfig-paths": "^3.4.2",
+    "tslint": "^5.10.0",
+    "typescript": "^3.0.0-dev.20180712"
+  },
+  "keywords": [],
+  "scripts": {
+    "compile": "npm-run-all compile:*",
+    "compile:dist": "tsc --module commonjs --outDir dist",
+    "compile:es": "tsc --module es2015 --outDir es",
+    "clean": "run-p clean:**",
+    "clean:dist": "rimraf dist",
+    "clean:es": "rimraf es",
+    "lint": "tslint src/**/*.ts",
+    "release:github": "git add . && git commit -am $npm_package_version --allow-empty && git tag $npm_package_version && git push && git push --tags",
+    "release": "run-s clean compile test release:github",
+    "test": "NODE_ENV=test jest"
+  }
+}
