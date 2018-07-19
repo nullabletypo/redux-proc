@@ -25,17 +25,17 @@ const defaultOptions = () => ({
 exports.createReduxProcMiddleware = (opts) => store => next => {
     const { proxy, busInstance } = Object.assign({}, defaultOptions(), opts);
     const registry = new WeakMap();
-    const actionQueue = new rxjs_1.Subject();
+    const actionQueue$ = new rxjs_1.Subject();
     const state$ = new rxjs_1.BehaviorSubject(store.getState());
     const action$ = busInstance;
-    actionQueue.pipe(ensureAction, operators_1.observeOn(rxjs_1.queueScheduler)).subscribe(action => {
+    actionQueue$.pipe(ensureAction, operators_1.observeOn(rxjs_1.queueScheduler)).subscribe(action => {
         next(action);
         state$.next(store.getState());
         action$.dispatch(action);
     });
     return action => {
         if (action.type !== TYPE) {
-            actionQueue.next(action);
+            actionQueue$.next(action);
             return action;
         }
         if (registry.has(action.meta.processor)) {
