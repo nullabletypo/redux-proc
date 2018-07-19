@@ -38,7 +38,7 @@
     "ts-node": "^7.0.0",
     "tsconfig-paths": "^3.4.2",
     "tslint": "^5.10.0",
-    "typescript": "^3.0.0-dev.20180712"
+    "typescript": "^3.0.0-rc"
   },
   "keywords": [],
   "scripts": {
