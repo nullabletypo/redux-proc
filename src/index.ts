@@ -64,11 +64,11 @@ const defaultOptions = (): DefaultOptions => ({
 export const createReduxProcMiddleware = (opts?: MiddlewareOptions): Middleware => store => next => {
   const { proxy, busInstance } = { ...defaultOptions(), ...opts }
   const registry = new WeakMap<Processor<any, any>, Subject<any>>()
-  const actionQueue = new Subject<any>()
+  const actionQueue$ = new Subject<any>()
   const state$ = new BehaviorSubject(store.getState())
   const action$ = busInstance
 
-  actionQueue.pipe(
+  actionQueue$.pipe(
     ensureAction,
     observeOn(queueScheduler),
   ).subscribe(action => {
@@ -79,7 +79,7 @@ export const createReduxProcMiddleware = (opts?: MiddlewareOptions): Middleware 
 
   return action => {
     if (action.type !== TYPE) {
-      actionQueue.next(action)
+      actionQueue$.next(action)
       return action
     }
     if (registry.has(action.meta.processor)) {
