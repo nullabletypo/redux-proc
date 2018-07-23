@@ -10,9 +10,9 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-"@types/jest@^23.1.6":
-  version "23.1.6"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.1.6.tgz#11c88f738f5b57d1a9dd4970c576a6639b8f0f37"
+"@types/jest@^23.3.0":
+  version "23.3.0"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.0.tgz#5dd70033b616a6228042244ebd992f6426808810"
 
 "@types/node@*":
   version "8.5.1"
@@ -604,11 +604,11 @@ combined-stream@^1.0.5, combined-stream@~1.0.5:
     delayed-stream "~1.0.0"
 
 "command-bus@https://github.com/nullabletypo/command-bus":
-  version "0.3.3"
-  resolved "https://github.com/nullabletypo/command-bus#ad8629bf8166433b0e70f9c424c3248234432074"
+  version "0.3.4"
+  resolved "https://github.com/nullabletypo/command-bus#3c75c4dcd235d3af943bfa65b143a3e10e04fd41"
   dependencies:
-    f "https://github.com/nullabletypo/f"
     rxjs "^6.2.2"
+    utils "https://github.com/nullabletypo/utils"
 
 commander@^2.12.1:
   version "2.13.0"
@@ -1022,8 +1022,8 @@ extsprintf@1.3.0, extsprintf@^1.2.0:
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.3.0.tgz#96918440e3041a7a414f8c52e3c574eb3c3e1e05"
 
 "f@https://github.com/nullabletypo/f":
-  version "0.0.2"
-  resolved "https://github.com/nullabletypo/f#2e511d06b66d22aff3ee62b8d142f63b036ac335"
+  version "0.0.6"
+  resolved "https://github.com/nullabletypo/f#7b18047dd56fad3eda026deda7c32e9c55d12dc8"
 
 fast-deep-equal@^1.0.0:
   version "1.0.0"
@@ -3501,9 +3501,9 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
-ts-jest@^23.0.0:
-  version "23.0.0"
-  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-23.0.0.tgz#3216310fb51e40789c6e4aa20bfe80198d250e9b"
+ts-jest@^23.0.1:
+  version "23.0.1"
+  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-23.0.1.tgz#c90e747b2787d3394319cde77c2748a87aaf2f48"
   dependencies:
     babel-plugin-istanbul "^4.1.6"
     babel-preset-jest "^23.0.0"
@@ -3574,9 +3574,9 @@ tslint-react@^3.6.0:
   dependencies:
     tsutils "^2.13.1"
 
-tslint@^5.10.0:
-  version "5.10.0"
-  resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.10.0.tgz#11e26bccb88afa02dd0d9956cae3d4540b5f54c3"
+tslint@^5.11.0:
+  version "5.11.0"
+  resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.11.0.tgz#98f30c02eae3cde7006201e4c33cb08b48581eed"
   dependencies:
     babel-code-frame "^6.22.0"
     builtin-modules "^1.1.1"
@@ -3589,7 +3589,7 @@ tslint@^5.10.0:
     resolve "^1.3.2"
     semver "^5.3.0"
     tslib "^1.8.0"
-    tsutils "^2.12.1"
+    tsutils "^2.27.2"
 
 tsutils@2.8.0:
   version "2.8.0"
@@ -3597,13 +3597,7 @@ tsutils@2.8.0:
   dependencies:
     tslib "^1.7.1"
 
-tsutils@^2.12.1:
-  version "2.12.2"
-  resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-2.12.2.tgz#ad58a4865d17ec3ddb6631b6ca53be14a5656ff3"
-  dependencies:
-    tslib "^1.7.1"
-
-tsutils@^2.13.1:
+tsutils@^2.13.1, tsutils@^2.27.2:
   version "2.28.0"
   resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-2.28.0.tgz#6bd71e160828f9d019b6f4e844742228f85169a1"
   dependencies:
@@ -3686,6 +3680,10 @@ util.promisify@^1.0.0:
   dependencies:
     define-properties "^1.1.2"
     object.getownpropertydescriptors "^2.0.3"
+
+"utils@https://github.com/nullabletypo/utils":
+  version "0.0.6"
+  resolved "https://github.com/nullabletypo/utils#7b18047dd56fad3eda026deda7c32e9c55d12dc8"
 
 uuid@^3.0.0, uuid@^3.1.0:
   version "3.1.0"
