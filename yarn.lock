@@ -604,8 +604,8 @@ combined-stream@^1.0.5, combined-stream@~1.0.5:
     delayed-stream "~1.0.0"
 
 "command-bus@https://github.com/nullabletypo/command-bus":
-  version "0.3.4"
-  resolved "https://github.com/nullabletypo/command-bus#3c75c4dcd235d3af943bfa65b143a3e10e04fd41"
+  version "0.3.5"
+  resolved "https://github.com/nullabletypo/command-bus#a9eb0a4d5a82e163bb63dfa5e2a0f5c235645444"
   dependencies:
     rxjs "^6.2.2"
     utils "https://github.com/nullabletypo/utils"
