@@ -29,11 +29,11 @@ exports.createReduxProcMiddleware = (opts) => store => next => {
     const state$ = new rxjs_1.BehaviorSubject(store.getState());
     const action$ = busInstance;
     actionQueue$.pipe(ensureAction, operators_1.observeOn(rxjs_1.queueScheduler)).subscribe(action => {
-        next(action);
-        state$.next(store.getState());
         action$.dispatch(action);
     });
     return action => {
+        next(action);
+        state$.next(store.getState());
         if (action.type !== TYPE) {
             actionQueue$.next(action);
             return action;
@@ -55,6 +55,7 @@ exports.createReduxProcMiddleware = (opts) => store => next => {
             input$.next(payload);
             return action;
         }
+        return action;
     };
 };
 //
