@@ -72,12 +72,13 @@ export const createReduxProcMiddleware = (opts?: MiddlewareOptions): Middleware 
     ensureAction,
     observeOn(queueScheduler),
   ).subscribe(action => {
-    next(action)
-    state$.next(store.getState())
     action$.dispatch(action)
   })
 
   return action => {
+    next(action)
+    state$.next(store.getState())
+
     if (action.type !== TYPE) {
       actionQueue$.next(action)
       return action
@@ -98,6 +99,7 @@ export const createReduxProcMiddleware = (opts?: MiddlewareOptions): Middleware 
       input$.next(payload)
       return action
     }
+    return action
   }
 }
 
